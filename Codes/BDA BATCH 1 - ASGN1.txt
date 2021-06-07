@@ -1,0 +1,705 @@
+LAB BATCH 1
+--------------------------------------------------------------
+NAME: KETAKI PATIL
+PANEL : A
+ROLL NO. : 17
+BATCH : A1
+
+---------------------------------------------------------------
+
+---CREATE DATABASE INSTITUTE
+
+> show dbs
+admin       0.000GB
+config      0.000GB
+employee    0.000GB
+hotel       0.000GB
+local       0.000GB
+restaurant  0.000GB
+
+> use institute
+switched to db institute
+
+---CREATE COLLECTION STUDENT
+
+> db.createCollection("student")
+{ "ok" : 1 }
+
+---INSERT 10 DOCUMENTS
+
+> db.student.insert({StudentId:1,StudentName:"Aakash",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Majiwada",City:"Thane",Pincode:400610},Subjects:[{SubName1:"DBMS",Score1:75},{SubName2:"TOC",Score2:95},{SubName3:"IS",Score3:70},{SubName4:"AI",Score4:85}],AreaofInterest:["Cybersecurity","Cloud Computing"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:2,StudentName:"Apoorv",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Lokhandwala",City:"Mumbai",Pincode:400400},Subjects:[{SubName1:"DBMS",Score1:95},{SubName2:"TOC",Score2:85},{SubName3:"IS",Score3:60},{SubName4:"AI",Score4:80}],AreaofInterest:["Big Data","Cloud Computing"]})
+WriteResult({ "nInserted" : 1 })
+>
+> db.student.insert({StudentId:3,StudentName:"Vignesh",Branch:"CSE",Age:21,Panel:"B",Address:{Area:"Pradhikaran",City:"Pune",Pincode:403410},Subjects:[{SubName1:"DBMS",Score1:90},{SubName2:"TOC",Score2:80},{SubName3:"IS",Score3:79},{SubName4:"AI",Score4:90}],AreaofInterest:["Big Data","Machine Learning"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:4,StudentName:"Shashank",Branch:"CSE",Age:22,Panel:"B",Address:{Area:"Bhakti Shakti",City:"Pune",Pincode:403418},Subjects:[{SubName1:"DBMS",Score1:80},{SubName2:"TOC",Score2:70},{SubName3:"IS",Score3:59},{SubName4:"AI",Score4:90}],AreaofInterest:["Artificial Intelligence","Machine Learning"]})
+WriteResult({ "nInserted" : 1 })
+>
+> db.student.insert({StudentId:5,StudentName:"Geeta",Branch:"CSE",Age:20,Panel:"D",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName1:"DBMS",Score1:90},{SubName2:"TOC",Score2:70},{SubName3:"IS",Score3:89},{SubName4:"AI",Score4:60}],AreaofInterest:["Networking","Electronics"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:6,StudentName:"Gargie",Branch:"CSE",Age:21,Panel:"D",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName1:"DBMS",Score1:90},{SubName2:"TOC",Score2:80},{SubName3:"IS",Score3:69},{SubName4:"AI",Score4:90}],AreaofInterest:["Machine Learning","Deep Learning","Artificial Intelligence"]})
+WriteResult({ "nInserted" : 1 })
+>
+> db.student.insert({StudentId:7,StudentName:"Priya",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Noida",City:"Delhi",Pincode:403120},Subjects:[{SubName1:"DBMS",Score1:70},{SubName2:"TOC",Score2:84},{SubName3:"IS",Score3:89},{SubName4:"AI",Score4:96}],AreaofInterest:["Artificial Intelligence"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:8,StudentName:"Swati",Branch:"CSE",Age:19,Panel:"A",Address:{Area:"Mahal",City:"Nagpur",Pincode:403004},Subjects:[{SubName1:"DBMS",Score1:80},{SubName2:"TOC",Score2:89},{SubName3:"IS",Score3:65},{SubName4:"AI",Score4:87}],AreaofInterest:["Machine Learning","Deep Learning"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:9,StudentName:"Pranav",Branch:"Civil",Age:19,Panel:"B",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName1:"CT",Score1:90},{SubName2:"SA"}],AreaofInterest:["Highway"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:10,StudentName:"Vikram",Branch:"Civil",Age:21,Panel:"C",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName1:"CT",Score1:90},{SubName2:"SA",Score2:80},{SubName3:"GEO",Score3:69}],AreaofInterest:["Energy","Dam"]})
+WriteResult({ "nInserted" : 1 })
+
+---DISPLAY ALL STUDENTS INFORMARTION
+> db.student.find().pretty()
+{
+        "_id" : ObjectId("6065c2f4269de005a89e71aa"),
+        "StudentId" : 1,
+        "StudentName" : "Aakash",
+        "Branch" : "CSE",
+        "Age" : 20,
+        "Panel" : "A",
+        "Address" : {
+                "Area" : "Majiwada",
+                "City" : "Thane",
+                "Pincode" : 400610
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 75
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 95
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 70
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 85
+                }
+        ],
+        "AreaofInterest" : [
+                "Cybersecurity",
+                "Cloud Computing"
+        ]
+}
+{
+        "_id" : ObjectId("6065c38f269de005a89e71ab"),
+        "StudentId" : 2,
+        "StudentName" : "Apoorv",
+        "Branch" : "CSE",
+        "Age" : 20,
+        "Panel" : "A",
+        "Address" : {
+                "Area" : "Lokhandwala",
+                "City" : "Mumbai",
+                "Pincode" : 400400
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 95
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 85
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 60
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 80
+                }
+        ],
+        "AreaofInterest" : [
+                "Big Data",
+                "Cloud Computing"
+        ]
+}
+{
+        "_id" : ObjectId("6065c3ef269de005a89e71ac"),
+        "StudentId" : 3,
+        "StudentName" : "Vignesh",
+        "Branch" : "CSE",
+        "Age" : 21,
+        "Panel" : "B",
+        "Address" : {
+                "Area" : "Pradhikaran",
+                "City" : "Pune",
+                "Pincode" : 403410
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 80
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 79
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 90
+                }
+        ],
+        "AreaofInterest" : [
+                "Big Data",
+                "Machine Learning"
+        ]
+}
+{
+        "_id" : ObjectId("6065c45b269de005a89e71ad"),
+        "StudentId" : 4,
+        "StudentName" : "Shashank",
+        "Branch" : "CSE",
+        "Age" : 22,
+        "Panel" : "B",
+        "Address" : {
+                "Area" : "Bhakti Shakti",
+                "City" : "Pune",
+                "Pincode" : 403418
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 80
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 70
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 59
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 90
+                }
+        ],
+        "AreaofInterest" : [
+                "Artificial Intelligence",
+                "Machine Learning"
+        ]
+}
+{
+        "_id" : ObjectId("6065c51b269de005a89e71ae"),
+        "StudentId" : 5,
+        "StudentName" : "Geeta",
+        "Branch" : "CSE",
+        "Age" : 20,
+        "Panel" : "D",
+        "Address" : {
+                "Area" : "Kothrud",
+                "City" : "Pune",
+                "Pincode" : 403414
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 70
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 89
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 60
+                }
+        ],
+        "AreaofInterest" : [
+                "Networking",
+                "Electronics"
+        ]
+}
+{
+        "_id" : ObjectId("6065c589269de005a89e71af"),
+        "StudentId" : 6,
+        "StudentName" : "Gargie",
+        "Branch" : "CSE",
+        "Age" : 21,
+        "Panel" : "D",
+        "Address" : {
+                "Area" : "Kothrud",
+                "City" : "Pune",
+                "Pincode" : 403414
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 80
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 69
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 90
+                }
+        ],
+        "AreaofInterest" : [
+                "Machine Learning",
+                "Deep Learning",
+                "Artificial Intelligence"
+        ]
+}
+{
+        "_id" : ObjectId("6065c757269de005a89e71b0"),
+        "StudentId" : 7,
+        "StudentName" : "Priya",
+        "Branch" : "CSE",
+        "Age" : 20,
+        "Panel" : "A",
+        "Address" : {
+                "Area" : "Noida",
+                "City" : "Delhi",
+                "Pincode" : 403120
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 70
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 84
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 89
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 96
+                }
+        ],
+        "AreaofInterest" : [
+                "Artificial Intelligence"
+        ]
+}
+{
+        "_id" : ObjectId("6065c75f269de005a89e71b1"),
+        "StudentId" : 8,
+        "StudentName" : "Swati",
+        "Branch" : "CSE",
+        "Age" : 19,
+        "Panel" : "A",
+        "Address" : {
+                "Area" : "Mahal",
+                "City" : "Nagpur",
+                "Pincode" : 403004
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 80
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 89
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 65
+                },
+                {
+                        "SubName4" : "AI",
+                        "Score4" : 87
+                }
+        ],
+        "AreaofInterest" : [
+                "Machine Learning",
+                "Deep Learning"
+        ]
+}
+{
+        "_id" : ObjectId("6065c766269de005a89e71b2"),
+        "StudentId" : 9,
+        "StudentName" : "Pranav",
+        "Branch" : "Civil",
+        "Age" : 19,
+        "Panel" : "B",
+        "Address" : {
+                "Area" : "Kothrud",
+                "City" : "Pune",
+                "Pincode" : 403414
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "CT",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "SA"
+                }
+        ],
+        "AreaofInterest" : [
+                "Highway"
+        ]
+}
+{
+        "_id" : ObjectId("6065c76d269de005a89e71b3"),
+        "StudentId" : 10,
+        "StudentName" : "Vikram",
+        "Branch" : "Civil",
+        "Age" : 21,
+        "Panel" : "C",
+        "Address" : {
+                "Area" : "Kothrud",
+                "City" : "Pune",
+                "Pincode" : 403414
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "CT",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "SA",
+                        "Score2" : 80
+                },
+                {
+                        "SubName3" : "GEO",
+                        "Score3" : 69
+                }
+        ],
+        "AreaofInterest" : [
+                "Energy",
+                "Dam"
+        ]
+}
+
+---------------------UPDATE BY FOLLOWING CONDITIONS :
+
+---INCREMENT VALUE OF AGE IN ONE RECORD
+
+> db.student.update({StudentName: "Pranav"}, {$inc: {Age: 1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.update({StudentName: "Vikram"}, {$inc: {Age: -2}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.student.find({Branch:"Civil"})
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentId" : 10, "StudentName" : "Vikram", "Branch" : "Civil", "Age" : 19, "Panel" : "C", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA", "Score2" : 80 }, { "SubName3" : "GEO", "Score3" : 69 } ], "AreaofInterest" : [ "Energy", "Dam" ] }
+>
+
+---PUSH SOME MORE AREA OF INTEREST
+
+> db.student.update({StudentId: 6},{$push:{AreaofInterest:{$each:["Big Data"]}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.update({StudentId: 4},{$push:{AreaofInterest:{$each:["Python","Embedded Systems"]}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.update({StudentId: 6},{$push:{AreaofInterest:{$each:["Machine Learning"]}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+---POP SOME SUBJECTS
+
+> db.student.update({StudentId: 5},{$pop:{Subjects:1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find({StudentId:5}).pretty()
+{
+        "_id" : ObjectId("6065c51b269de005a89e71ae"),
+        "StudentId" : 5,
+        "StudentName" : "Geeta",
+        "Branch" : "CSE",
+        "Age" : 20,
+        "Panel" : "D",
+        "Address" : {
+                "Area" : "Kothrud",
+                "City" : "Pune",
+                "Pincode" : 403414
+        },
+        "Subjects" : [
+                {
+                        "SubName1" : "DBMS",
+                        "Score1" : 90
+                },
+                {
+                        "SubName2" : "TOC",
+                        "Score2" : 70
+                },
+                {
+                        "SubName3" : "IS",
+                        "Score3" : 89
+                }
+        ],
+        "AreaofInterest" : [
+                "Networking",
+                "Electronics"
+        ]
+}
+
+
+---REPLACE EXISTING RECORD WITH NEW RECORD
+> db.student.find({"StudentName":"Pranav"})
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+> db.student.update({StudentName:"Pranav"},{$set:{Branch:"CSE",Age:20,Panel:"A","Address.Area":"Majiwada","Address.City":"Thane","Address.Pincode":400610,"AreaofInterest.0":"Cybersecurity"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find({"StudentName":"Pranav"})
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "CSE", "Age" : 20, "Panel" : "A", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Cybersecurity" ] }
+
+
+
+---SET NEW PANEL B FOR STUDENTS WITH PANEL A
+> db.student.update({Panel:"A"},{$set:{Panel:"B"}},{multi:true})
+WriteResult({ "nMatched" : 4, "nUpserted" : 0, "nModified" : 4 })
+> db.student.find({Panel:"B"})
+{ "_id" : ObjectId("6065c2f4269de005a89e71aa"), "StudentId" : 1, "StudentName" : "Aakash", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 75 }, { "SubName2" : "TOC", "Score2" : 95 }, { "SubName3" : "IS", "Score3" : 70 }, { "SubName4" : "AI", "Score4" : 85 } ], "AreaofInterest" : [ "Cybersecurity", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 95 }, { "SubName2" : "TOC", "Score2" : 85 }, { "SubName3" : "IS", "Score3" : 60 }, { "SubName4" : "AI", "Score4" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+{ "_id" : ObjectId("6065c757269de005a89e71b0"), "StudentId" : 7, "StudentName" : "Priya", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Noida", "City" : "Delhi", "Pincode" : 403120 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 70 }, { "SubName2" : "TOC", "Score2" : 84 }, { "SubName3" : "IS", "Score3" : 89 }, { "SubName4" : "AI", "Score4" : 96 } ], "AreaofInterest" : [ "Artificial Intelligence" ] }
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentId" : 8, "StudentName" : "Swati", "Branch" : "CSE", "Age" : 19, "Panel" : "B", "Address" : { "Area" : "Mahal", "City" : "Nagpur", "Pincode" : 403004 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 89 }, { "SubName3" : "IS", "Score3" : 65 }, { "SubName4" : "AI", "Score4" : 87 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning" ] }
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+
+
+---ADD ONE RECORD IF DOESN'T EXIST ELSE UPDATE (UPSERT)
+
+> db.student.updateMany({StudentName:"Roohi"},{$set:{Branch:"CSE",Age:20,Panel:"A","Address.Area":"Majiwada","Address.City":"Thane","Address.Pincode":400610,"AreaofInterest.0":"Cybersecurity"}},{upsert:true})
+{
+        "acknowledged" : true,
+        "matchedCount" : 0,
+        "modifiedCount" : 0,
+        "upsertedId" : ObjectId("6065dc20f1494dac4bd6af25")
+}
+> db.student.find({StudentName:"Roohi"}).pretty()
+{
+        "_id" : ObjectId("6065dc20f1494dac4bd6af25"),
+        "StudentName" : "Roohi",
+        "Address" : {
+                "Area" : "Majiwada",
+                "City" : "Thane",
+                "Pincode" : 400610
+        },
+        "Age" : 20,
+        "AreaofInterest" : {
+                "0" : "Cybersecurity"
+        },
+        "Branch" : "CSE",
+        "Panel" : "A"
+}
+> db.student.updateMany({StudentName:"Mohit"},{$set:{Branch:"CSE",Age:20,Panel:"G","Address.Area":"Itwan","Address.City":"Nagpur","Address.Pincode":405610,"Subjects.0":{SubName1:"TOC",Score1:90},"AreaofInterest.0":"Cybersecurity"}},{upsert:true})
+{
+        "acknowledged" : true,
+        "matchedCount" : 0,
+        "modifiedCount" : 0,
+        "upsertedId" : ObjectId("6065dccdf1494dac4bd6af2f")
+}
+> db.student.find({StudentName:"Mohit"}).pretty()
+{
+        "_id" : ObjectId("6065dccdf1494dac4bd6af2f"),
+        "StudentName" : "Mohit",
+        "Address" : {
+                "Area" : "Itwan",
+                "City" : "Nagpur",
+                "Pincode" : 405610
+        },
+        "Age" : 20,
+        "AreaofInterest" : {
+                "0" : "Cybersecurity"
+        },
+        "Branch" : "CSE",
+        "Panel" : "G",
+        "Subjects" : {
+                "0" : {
+                        "SubName1" : "TOC",
+                        "Score1" : 90
+                }
+        }
+}
+> db.student.updateMany({StudentName:"Monica"},{$set:{Branch:"CSE",Age:21,Panel:"A","Address.Area":"Itwan","Address.City":"Nagpur","Address.Pincode":405650,"Subjects.0":{SubName1:"CN",Score1:90},"AreaofInterest.0":"Big Data"}},{upsert:true})
+{
+        "acknowledged" : true,
+        "matchedCount" : 0,
+        "modifiedCount" : 0,
+        "upsertedId" : ObjectId("6065dd09f1494dac4bd6af32")
+}
+> db.student.find({StudentName:"Monica"}).pretty()
+{
+        "_id" : ObjectId("6065dd09f1494dac4bd6af32"),
+        "StudentName" : "Monica",
+        "Address" : {
+                "Area" : "Itwan",
+                "City" : "Nagpur",
+                "Pincode" : 405650
+        },
+        "Age" : 21,
+        "AreaofInterest" : {
+                "0" : "Big Data"
+        },
+        "Branch" : "CSE",
+        "Panel" : "A",
+        "Subjects" : {
+                "0" : {
+                        "SubName1" : "CN",
+                        "Score1" : 90
+                }
+        }
+}
+>
+
+---REMOVE ALL DOCUMENTS WITH PANEL G
+
+> db.student.update({StudentName:"Roohi"},{$set:{Panel:"G"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find({StudentName:"Roohi"})
+{ "_id" : ObjectId("6065dc20f1494dac4bd6af25"), "StudentName" : "Roohi", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Age" : 20, "AreaofInterest" : { "0" : "Cybersecurity" }, "Branch" : "CSE", "Panel" : "G" }
+> db.student.remove({Panel:"G"})
+WriteResult({ "nRemoved" : 2 })
+> db.student.find({Panel:"G"})
+>
+
+---USE $GTE, $GT, $LT IN QUERIES
+
+> db.student.find({Age:{$lt:20}})
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentId" : 8, "StudentName" : "Swati", "Branch" : "CSE", "Age" : 19, "Panel" : "B", "Address" : { "Area" : "Mahal", "City" : "Nagpur", "Pincode" : 403004 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 89 }, { "SubName3" : "IS", "Score3" : 65 }, { "SubName4" : "AI", "Score4" : 87 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning" ] }
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentId" : 10, "StudentName" : "Vikram", "Branch" : "Civil", "Age" : 19, "Panel" : "C", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA", "Score2" : 80 }, { "SubName3" : "GEO", "Score3" : 69 } ], "AreaofInterest" : [ "Energy", "Dam" ] }
+
+> db.student.find({"Subjects.Score1":{$gte:90}})
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 95 }, { "SubName2" : "TOC", "Score2" : 85 }, { "SubName3" : "IS", "Score3" : 60 }, { "SubName4" : "AI", "Score4" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c51b269de005a89e71ae"), "StudentId" : 5, "StudentName" : "Geeta", "Branch" : "CSE", "Age" : 20, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 89 } ], "AreaofInterest" : [ "Networking", "Electronics" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data" ] }
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentId" : 10, "StudentName" : "Vikram", "Branch" : "Civil", "Age" : 19, "Panel" : "C", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA", "Score2" : 80 }, { "SubName3" : "GEO", "Score3" : 69 } ], "AreaofInterest" : [ "Energy", "Dam" ] }
+
+> db.student.find({"StudentId":{$gt:7}})
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentId" : 8, "StudentName" : "Swati", "Branch" : "CSE", "Age" : 19, "Panel" : "B", "Address" : { "Area" : "Mahal", "City" : "Nagpur", "Pincode" : 403004 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 89 }, { "SubName3" : "IS", "Score3" : 65 }, { "SubName4" : "AI", "Score4" : 87 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning" ] }
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentId" : 10, "StudentName" : "Vikram", "Branch" : "Civil", "Age" : 19, "Panel" : "C", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA", "Score2" : 80 }, { "SubName3" : "GEO", "Score3" : 69 } ], "AreaofInterest" : [ "Energy", "Dam" ] }
+
+
+---FIND RECORDS HAVING SUBJECT 'DBMS'
+
+> db.student.find({$or:[{"Subjects.SubName1":"DBMS"},{"Subjects.SubName2":"DBMS"},{"Subjects.SubName3":"DBMS"},{"Subjects.SubName4":"DBMS"}]})
+{ "_id" : ObjectId("6065c2f4269de005a89e71aa"), "StudentId" : 1, "StudentName" : "Aakash", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 75 }, { "SubName2" : "TOC", "Score2" : 95 }, { "SubName3" : "IS", "Score3" : 70 }, { "SubName4" : "AI", "Score4" : 85 } ], "AreaofInterest" : [ "Cybersecurity", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 95 }, { "SubName2" : "TOC", "Score2" : 85 }, { "SubName3" : "IS", "Score3" : 60 }, { "SubName4" : "AI", "Score4" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+{ "_id" : ObjectId("6065c51b269de005a89e71ae"), "StudentId" : 5, "StudentName" : "Geeta", "Branch" : "CSE", "Age" : 20, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 89 } ], "AreaofInterest" : [ "Networking", "Electronics" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data" ] }
+{ "_id" : ObjectId("6065c757269de005a89e71b0"), "StudentId" : 7, "StudentName" : "Priya", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Noida", "City" : "Delhi", "Pincode" : 403120 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 70 }, { "SubName2" : "TOC", "Score2" : 84 }, { "SubName3" : "IS", "Score3" : 89 }, { "SubName4" : "AI", "Score4" : 96 } ], "AreaofInterest" : [ "Artificial Intelligence" ] }
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentId" : 8, "StudentName" : "Swati", "Branch" : "CSE", "Age" : 19, "Panel" : "B", "Address" : { "Area" : "Mahal", "City" : "Nagpur", "Pincode" : 403004 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 89 }, { "SubName3" : "IS", "Score3" : 65 }, { "SubName4" : "AI", "Score4" : 87 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning" ] }
+
+---FIND RECORDS WHERE AGE IS ABOVE 20
+
+> db.student.find({"Age":{$gt:20}})
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data" ] }
+{ "_id" : ObjectId("6065dd09f1494dac4bd6af32"), "StudentName" : "Monica", "Address" : { "Area" : "Itwan", "City" : "Nagpur", "Pincode" : 405650 }, "Age" : 21, "AreaofInterest" : { "0" : "Big Data" }, "Branch" : "CSE", "Panel" : "A", "Subjects" : { "0" : { "SubName1" : "CN", "Score1" : 90 } } }
+
+---FIND ALL RECORDS STARTING WITH 'M'
+
+> db.student.find({StudentName:{$regex:"M.*"}})
+{ "_id" : ObjectId("6065dd09f1494dac4bd6af32"), "StudentName" : "Monica", "Address" : { "Area" : "Itwan", "City" : "Nagpur", "Pincode" : 405650 }, "Age" : 21, "AreaofInterest" : { "0" : "Big Data" }, "Branch" : "CSE", "Panel" : "A", "Subjects" : { "0" : { "SubName1" : "CN", "Score1" : 90 } } }
+
+---FIND TOTAL COUNT OF RECORDS IN YOUR COLLECTION
+
+> db.student.count()
+11
+
+---FIND DOCS WHERE SIZE OF AREA OF INTEREST IS 4
+
+> db.student.find({AreaofInterest:{$size:4}})
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data" ] }
+
+---DISPLAY NAME OF STUDENT ONLY WHEN QUERING THE DOCUMENT
+
+> db.student.find({},{"StudentName":1})
+{ "_id" : ObjectId("6065c2f4269de005a89e71aa"), "StudentName" : "Aakash" }
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentName" : "Apoorv" }
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentName" : "Vignesh" }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentName" : "Shashank" }
+{ "_id" : ObjectId("6065c51b269de005a89e71ae"), "StudentName" : "Geeta" }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentName" : "Gargie" }
+{ "_id" : ObjectId("6065c757269de005a89e71b0"), "StudentName" : "Priya" }
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentName" : "Swati" }
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentName" : "Pranav" }
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentName" : "Vikram" }
+{ "_id" : ObjectId("6065dd09f1494dac4bd6af32"), "StudentName" : "Monica" }
+>
+
+---DISPLAY DOCUMENTS SORTED IN DESCENDING ORDER BY NAME
+
+> db.student.find().sort({StudentName:-1})
+{ "_id" : ObjectId("6065c76d269de005a89e71b3"), "StudentId" : 10, "StudentName" : "Vikram", "Branch" : "Civil", "Age" : 19, "Panel" : "C", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA", "Score2" : 80 }, { "SubName3" : "GEO", "Score3" : 69 } ], "AreaofInterest" : [ "Energy", "Dam" ] }
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c75f269de005a89e71b1"), "StudentId" : 8, "StudentName" : "Swati", "Branch" : "CSE", "Age" : 19, "Panel" : "B", "Address" : { "Area" : "Mahal", "City" : "Nagpur", "Pincode" : 403004 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 89 }, { "SubName3" : "IS", "Score3" : 65 }, { "SubName4" : "AI", "Score4" : 87 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning" ] }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+{ "_id" : ObjectId("6065c757269de005a89e71b0"), "StudentId" : 7, "StudentName" : "Priya", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Noida", "City" : "Delhi", "Pincode" : 403120 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 70 }, { "SubName2" : "TOC", "Score2" : 84 }, { "SubName3" : "IS", "Score3" : 89 }, { "SubName4" : "AI", "Score4" : 96 } ], "AreaofInterest" : [ "Artificial Intelligence" ] }
+{ "_id" : ObjectId("6065c766269de005a89e71b2"), "StudentId" : 9, "StudentName" : "Pranav", "Branch" : "Civil", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "CT", "Score1" : 90 }, { "SubName2" : "SA" } ], "AreaofInterest" : [ "Highway" ] }
+{ "_id" : ObjectId("6065dd09f1494dac4bd6af32"), "StudentName" : "Monica", "Address" : { "Area" : "Itwan", "City" : "Nagpur", "Pincode" : 405650 }, "Age" : 21, "AreaofInterest" : { "0" : "Big Data" }, "Branch" : "CSE", "Panel" : "A", "Subjects" : { "0" : { "SubName1" : "CN", "Score1" : 90 } } }
+{ "_id" : ObjectId("6065c51b269de005a89e71ae"), "StudentId" : 5, "StudentName" : "Geeta", "Branch" : "CSE", "Age" : 20, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 89 } ], "AreaofInterest" : [ "Networking", "Electronics" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 95 }, { "SubName2" : "TOC", "Score2" : 85 }, { "SubName3" : "IS", "Score3" : 60 }, { "SubName4" : "AI", "Score4" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c2f4269de005a89e71aa"), "StudentId" : 1, "StudentName" : "Aakash", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 75 }, { "SubName2" : "TOC", "Score2" : 95 }, { "SubName3" : "IS", "Score3" : 70 }, { "SubName4" : "AI", "Score4" : 85 } ], "AreaofInterest" : [ "Cybersecurity", "Cloud Computing" ] }
+
+---FIRE QUERY USING "AND" OPERATION
+
+> db.student.find({$and:[{"Address.City":"Thane"},{"Age":{$eq:20}}]})
+{ "_id" : ObjectId("6065c2f4269de005a89e71aa"), "StudentId" : 1, "StudentName" : "Aakash", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 75 }, { "SubName2" : "TOC", "Score2" : 95 }, { "SubName3" : "IS", "Score3" : 70 }, { "SubName4" : "AI", "Score4" : 85 } ], "AreaofInterest" : [ "Cybersecurity", "Cloud Computing" ] }
+
+---FIRE QUERY USING "OR" OPERATION
+
+> db.student.find({$or:[{"Subjects.Score1":{$gt:90}},{"Subjects.Score4":{$gt:90}}]})
+{ "_id" : ObjectId("6065c38f269de005a89e71ab"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 95 }, { "SubName2" : "TOC", "Score2" : 85 }, { "SubName3" : "IS", "Score3" : 60 }, { "SubName4" : "AI", "Score4" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6065c757269de005a89e71b0"), "StudentId" : 7, "StudentName" : "Priya", "Branch" : "CSE", "Age" : 20, "Panel" : "B", "Address" : { "Area" : "Noida", "City" : "Delhi", "Pincode" : 403120 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 70 }, { "SubName2" : "TOC", "Score2" : 84 }, { "SubName3" : "IS", "Score3" : 89 }, { "SubName4" : "AI", "Score4" : 96 } ], "AreaofInterest" : [ "Artificial Intelligence" ] }
+
+---DISPLAY 2 DOCUMENTS WHILE QUERYING THE DOCUMENT
+
+> db.student.find({"Address.City":"Pune"}).limit(2)
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c45b269de005a89e71ad"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 80 }, { "SubName2" : "TOC", "Score2" : 70 }, { "SubName3" : "IS", "Score3" : 59 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning", "Python", "Embedded Systems" ] }
+
+---LOCATE ALL DOCUMENTS THAT CONTAIN AREA OF INTEREST AS "BIG DATA","MACHINE LEARNING" -ALL
+
+> db.student.find({AreaofInterest:{$all:["Big Data","Machine Learning"]}})
+{ "_id" : ObjectId("6065c3ef269de005a89e71ac"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 79 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6065c589269de005a89e71af"), "StudentId" : 6, "StudentName" : "Gargie", "Branch" : "CSE", "Age" : 21, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName1" : "DBMS", "Score1" : 90 }, { "SubName2" : "TOC", "Score2" : 80 }, { "SubName3" : "IS", "Score3" : 69 }, { "SubName4" : "AI", "Score4" : 90 } ], "AreaofInterest" : [ "Machine Learning", "Deep Learning", "Artificial Intelligence", "Big Data", "Machine Learning" ] }
+
+---DROP COLLECTION
+> db.student.drop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,908 @@
+LAB BATCH 2
+--------------------------------------------------------------
+NAME: KETAKI PATIL
+PANEL : A
+ROLL NO. : 17
+BATCH : A1
+
+---------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+AGGREGATION  - PART 1 : INSTITUTE DB STUDENT COLLECTION
+---------------------------------------------------------------------------------------
+> use institute
+switched to db institute
+
+> db.createCollection("student")
+{ "ok" : 1 }
+
+---INSERT 10 DOCUMENTS
+
+> db.createCollection("student")
+{ "ok" : 1 }
+> db.student.insert({StudentId:1,StudentName:"Aakash",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Majiwada",City:"Thane",Pincode:400610},Subjects:[{SubName:"DBMS",Score:75},{SubName:"TOC",Score:95},{SubName:"IS",Score:70},{SubName:"AI",Score:85}],AreaofInterest:["Cybersecurity","Cloud Computing"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:2,StudentName:"Apoorv",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Lokhandwala",City:"Mumbai",Pincode:400400},Subjects:[{SubName:"DBMS",Score:95},{SubName:"TOC",Score:85},{SubName:"IS",Score:60},{SubName:"AI",Score:80}],AreaofInterest:["Big Data","Cloud Computing"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:3,StudentName:"Vignesh",Branch:"CSE",Age:21,Panel:"B",Address:{Area:"Pradhikaran",City:"Pune",Pincode:403410},Subjects:[{SubName:"DBMS",Score:90},{SubName:"TOC",Score:80},{SubName:"IS",Score:79},{SubName:"AI",Score:90}],AreaofInterest:["Big Data","Machine Learning"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:4,StudentName:"Shashank",Branch:"CSE",Age:22,Panel:"B",Address:{Area:"Bhakti Shakti",City:"Pune",Pincode:403418},Subjects:[{SubName:"DBMS",Score:80},{SubName:"TOC",Score:70},{SubName:"IS",Score:59},{SubName:"AI",Score:90}],AreaofInterest:["Artificial Intelligence","Machine Learning"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:5,StudentName:"Geeta",Branch:"CSE",Age:20,Panel:"D",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName:"DBMS",Score:90},{SubName:"TOC",Score:70},{SubName:"IS",Score:89},{SubName:"AI",Score:60}],AreaofInterest:["Networking","Electronics"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:6,StudentName:"Gargie",Branch:"CSE",Age:21,Panel:"D",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName:"DBMS",Score:90},{SubName:"TOC",Score:80},{SubName:"IS",Score:69},{SubName:"AI",Score:90}],AreaofInterest:["Machine Learning","Deep Learning","Artificial Intelligence"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:7,StudentName:"Priya",Branch:"CSE",Age:20,Panel:"A",Address:{Area:"Noida",City:"Delhi",Pincode:403120},Subjects:[{SubName:"DBMS",Score:70},{SubName:"TOC",Score:84},{SubName:"IS",Score:89},{SubName:"AI",Score:96}],AreaofInterest:["Artificial Intelligence"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:8,StudentName:"Swati",Branch:"CSE",Age:19,Panel:"A",Address:{Area:"Mahal",City:"Nagpur",Pincode:403004},Subjects:[{SubName:"DBMS",Score:80},{SubName:"TOC",Score:89},{SubName:"IS",Score:65},{SubName:"AI",Score:87}],AreaofInterest:["Machine Learning","Deep Learning"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:9,StudentName:"Pranav",Branch:"Civil",Age:19,Panel:"B",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName:"CT",Score:90},{SubName:"SA"}],AreaofInterest:["Highway"]})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({StudentId:10,StudentName:"Vikram",Branch:"Civil",Age:21,Panel:"C",Address:{Area:"Kothrud",City:"Pune",Pincode:403414},Subjects:[{SubName:"CT",Score:90},{SubName:"SA",Score:80},{SubName:"GEO",Score:69}],AreaofInterest:["Energy","Dam"]})
+WriteResult({ "nInserted" : 1 })
+
+-- DISPLAY ALL STUDENT INFORMATION
+
+> db.student.find().limit(5)
+{ "_id" : ObjectId("6076fea896da375628ebd872"), "StudentId" : 1, "StudentName" : "Aakash", "Branch" : "CSE", "Age" : 20, "Panel" : "A", "Address" : { "Area" : "Majiwada", "City" : "Thane", "Pincode" : 400610 }, "Subjects" : [ { "SubName" : "DBMS", "Score" : 75 }, { "SubName" : "TOC", "Score" : 95 }, { "SubName" : "IS", "Score" : 70 }, { "SubName" : "AI", "Score" : 85 } ], "AreaofInterest" : [ "Cybersecurity", "Cloud Computing" ] }
+{ "_id" : ObjectId("6076feb096da375628ebd873"), "StudentId" : 2, "StudentName" : "Apoorv", "Branch" : "CSE", "Age" : 20, "Panel" : "A", "Address" : { "Area" : "Lokhandwala", "City" : "Mumbai", "Pincode" : 400400 }, "Subjects" : [ { "SubName" : "DBMS", "Score" : 95 }, { "SubName" : "TOC", "Score" : 85 }, { "SubName" : "IS", "Score" : 60 }, { "SubName" : "AI", "Score" : 80 } ], "AreaofInterest" : [ "Big Data", "Cloud Computing" ] }
+{ "_id" : ObjectId("6076fec296da375628ebd874"), "StudentId" : 3, "StudentName" : "Vignesh", "Branch" : "CSE", "Age" : 21, "Panel" : "B", "Address" : { "Area" : "Pradhikaran", "City" : "Pune", "Pincode" : 403410 }, "Subjects" : [ { "SubName" : "DBMS", "Score" : 90 }, { "SubName" : "TOC", "Score" : 80 }, { "SubName" : "IS", "Score" : 79 }, { "SubName" : "AI", "Score" : 90 } ], "AreaofInterest" : [ "Big Data", "Machine Learning" ] }
+{ "_id" : ObjectId("6076fec996da375628ebd875"), "StudentId" : 4, "StudentName" : "Shashank", "Branch" : "CSE", "Age" : 22, "Panel" : "B", "Address" : { "Area" : "Bhakti Shakti", "City" : "Pune", "Pincode" : 403418 }, "Subjects" : [ { "SubName" : "DBMS", "Score" : 80 }, { "SubName" : "TOC", "Score" : 70 }, { "SubName" : "IS", "Score" : 59 }, { "SubName" : "AI", "Score" : 90 } ], "AreaofInterest" : [ "Artificial Intelligence", "Machine Learning" ] }
+{ "_id" : ObjectId("6076fed396da375628ebd876"), "StudentId" : 5, "StudentName" : "Geeta", "Branch" : "CSE", "Age" : 20, "Panel" : "D", "Address" : { "Area" : "Kothrud", "City" : "Pune", "Pincode" : 403414 }, "Subjects" : [ { "SubName" : "DBMS", "Score" : 90 }, { "SubName" : "TOC", "Score" : 70 }, { "SubName" : "IS", "Score" : 89 }, { "SubName" : "AI", "Score" : 60 } ], "AreaofInterest" : [ "Networking", "Electronics" ] }
+>
+
+-- DISPLAY FIVE MOST COMMON "AREA OF INTEREST"
+
+> db.student.aggregate([{$unwind:"$AreaofInterest"},{$group:{_id:"$AreaofInterest",tcount:{$sum:1}}},{$sort:{tcount:-1}},{$limit : 5} ])
+{ "_id" : "Machine Learning", "tcount" : 4 }
+{ "_id" : "Artificial Intelligence", "tcount" : 3 }
+{ "_id" : "Big Data", "tcount" : 2 }
+{ "_id" : "Deep Learning", "tcount" : 2 }
+{ "_id" : "Cloud Computing", "tcount" : 2 }
+
+-- DISPLAY MIN, MAX, AVG MARKS SCORED IN EACH SUBJECT
+
+> db.student.aggregate([{$unwind:"$Subjects"},{$group:{_id:"$Subjects.SubName", Minmarks: { $min: "$Subjects.Score"}, Maxmarks: { $max: "$Subjects.Score"}, Avgmarks: { $avg: "$Subjects.Score"}}}])
+{ "_id" : "CT", "Minmarks" : 90, "Maxmarks" : 90, "Avgmarks" : 90 }
+{ "_id" : "DBMS", "Minmarks" : 70, "Maxmarks" : 95, "Avgmarks" : 83.75 }
+{ "_id" : "SA", "Minmarks" : 80, "Maxmarks" : 80, "Avgmarks" : 80 }
+{ "_id" : "IS", "Minmarks" : 59, "Maxmarks" : 89, "Avgmarks" : 72.5 }
+{ "_id" : "AI", "Minmarks" : 60, "Maxmarks" : 96, "Avgmarks" : 84.75 }
+{ "_id" : "GEO", "Minmarks" : 69, "Maxmarks" : 69, "Avgmarks" : 69 }
+{ "_id" : "TOC", "Minmarks" : 70, "Maxmarks" : 95, "Avgmarks" : 81.625 }
+
+-- DISPLAY TOTAL MARKS SCORED BY EACH STUDENT
+
+> db.student.aggregate([{$unwind:"$Subjects"},{$group:{_id:"$StudentName", Total_Marks: { $sum: "$Subjects.Score"}}}])
+{ "_id" : "Pranav", "Total_Marks" : 90 }
+{ "_id" : "Geeta", "Total_Marks" : 309 }
+{ "_id" : "Priya", "Total_Marks" : 339 }
+{ "_id" : "Aakash", "Total_Marks" : 325 }
+{ "_id" : "Apoorv", "Total_Marks" : 320 }
+{ "_id" : "Vignesh", "Total_Marks" : 339 }
+{ "_id" : "Shashank", "Total_Marks" : 299 }
+{ "_id" : "Gargie", "Total_Marks" : 329 }
+{ "_id" : "Swati", "Total_Marks" : 321 }
+{ "_id" : "Vikram", "Total_Marks" : 239 }
+
+
+-- DISPLAY NAMES OF STUDENTS WHO SCORED MORE THAN 80 MARKS IN SUBJECT1
+
+> db.student.aggregate([{$unwind:"$Subjects"},{$match:{"Subjects.SubName":"DBMS","Subjects.Score":{$gt:80}}},{$group:{_id:"$StudentName"}}])
+{ "_id" : "Apoorv" }
+{ "_id" : "Geeta" }
+{ "_id" : "Gargie" }
+{ "_id" : "Vignesh" }
+
+-- DISPLAY TOTAL NO. OF STUDENTS FROM PUNE
+
+> db.student.aggregate([{$match:{"Address.City":"Pune"}},{$count:"Students_in_Pune"}])
+{ "Students_in_Pune" : 6 }
+
+-- DISPLAY PANEL WISE COUNT OF STUDENTS
+
+> db.student.aggregate([{$group:{_id:"$Panel",stcount:{$sum:1}}}])
+{ "_id" : "C", "stcount" : 1 }
+{ "_id" : "A", "stcount" : 4 }
+{ "_id" : "B", "stcount" : 3 }
+{ "_id" : "D", "stcount" : 2 }
+
+-- DISPLAY BRANCH WISE COUNT OF STUDETNS
+
+> db.student.aggregate([{$group:{_id:"$Branch",stcount:{$sum:1}}}])
+{ "_id" : "CSE", "stcount" : 8 }
+{ "_id" : "Civil", "stcount" : 2 }
+
+-- DISPLAY ALL PANELS WHOSE STRENGTH IS MORE THAN 60
+
+> db.student.aggregate([{$group:{_id:"$Panel",stcount:{$sum:1}}},{$match:{stcount:{$gt:2}}}])
+{ "_id" : "A", "stcount" : 4 }
+{ "_id" : "B", "stcount" : 3 }
+
+
+---------------------------------------------------------------------------------------
+INDEXING  - PART 2 : HOLIDAYS.JSON
+---------------------------------------------------------------------------------------
+
+
+> show dbs
+admin       0.000GB
+config      0.000GB
+employee    0.000GB
+hotel       0.000GB
+institute   0.000GB
+local       0.000GB
+restaurant  0.000GB
+store       0.000GB
+> use institute
+switched to db institute
+> show collections
+holidays
+student
+> db.holidays.find().limit(5)
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b11"), "date" : ISODate("2015-04-06T00:00:00Z"), "name" : "Easter Monday", "url" : "https://en.wikipedia.org/wiki/Easter_Monday", "description" : "Easter Monday is the day after Easter Sunday and is celebrated as a holiday in some largely Christian cultures, especially Roman Catholic and Eastern Orthodox cultures. Easter Monday in the Roman Catholic liturgical calendar is the second day of the octave of Easter Week and analogously in the Eastern Orthodox Church is the second day of Bright Week." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b10"), "date" : ISODate("2015-04-03T00:00:00Z"), "name" : "Good Friday", "url" : "https://en.wikipedia.org/wiki/Good_Friday", "description" : "Good Friday (from the senses pious, holy of the word \"good\"), is a religious holiday observed primarily by Christians commemorating the crucifixion of Jesus Christ and his death at Calvary. The holiday is observed during Holy Week as part of the Paschal Triduum on the Friday preceding Easter Sunday, and may coincide with the Jewish observance of Passover. It is also known as Black Friday, Holy Friday, Great Friday, or Easter Friday, though the latter normally refers to the Friday in Easter week." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b14"), "date" : ISODate("2015-05-15T00:00:00Z"), "name" : "Friday after Ascension Day", "url" : "https://en.wikipedia.org/wiki/Ascension_of_Jesus_Christ", "description" : "The Ascension of Jesus is the Christian teaching found in the New Testament that the resurrected Jesus was taken up to heaven in his resurrected body, in the presence of eleven of his apostles, occurring 40 days after the resurrection. In the biblical narrative, an angel tells the watching disciples that Jesus' second coming will take place in the same manner as his ascension." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b16"), "date" : ISODate("2015-07-21T00:00:00Z"), "name" : "Belgian National Holiday", "url" : "https://en.wikipedia.org/wiki/Belgium" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0f"), "date" : ISODate("2015-04-02T00:00:00Z"), "name" : "Holy Thursday", "url" : "https://en.wikipedia.org/wiki/Maundy_Thursday", "description" : "Maundy Thursday, also known as Holy Thursday, Covenant Thursday, Great & Holy Thursday, and Thursday of Mysteries, is the Christian feast or holy day falling on the Thursday before Easter that commemorates the Last Supper of Jesus Christ with the Apostles as described in the Canonical gospels. It is the fifth day of Holy Week, and is preceded by Holy Wednesday and followed by Good Friday." }
+
+> db.holidays.find().sort({_id:-1}).limit(1).pretty()
+{
+        "_id" : ObjectId("55a7c4e0d1ba3de47e547f5d"),
+        "date" : ISODate("2015-12-07T00:00:00Z"),
+        "name" : "Pearl Harbor Rememberance Day",
+        "flag_day" : 1,
+        "age" : 74,
+        "url" : "https://en.wikipedia.org/wiki/Pearl_Harbor_Remembrance_Day",
+        "description" : "Pearl Harbor Remembrance Day, which is observed annually on December 7, is to remember and honor all those who died in the attack on Pearl Harbor on December 7, 1941. On August 23, 1994, United States Congress, by Pub.L. 103-308, designated December 7 of each year as National Pearl Harbor Remembrance Day. National Pearl Harbor Remembrance Day is also referred to as Pearl Harbor Remembrance Day or Pearl Harbor Day. It is a tradition to fly the Flag of the United States at half-staff until sunset in honor of dead patriots."
+}
+
+> db.holidays.find().count()
+1105
+
+-- SHOW EXISITING INDEXES
+
+> db.holidays.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "institute.holidays"
+        }
+]
+
+-- EXPLAIN WITHOUT SINGLE INDEX
+
+> db.holidays.find({date :ISODate("2015-12-07T00:00:00Z") }).explain("executionStats")
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "date" : {
+                                "$eq" : ISODate("2015-12-07T00:00:00Z")
+                        }
+                },
+                "winningPlan" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "date" : {
+                                        "$eq" : ISODate("2015-12-07T00:00:00Z")
+                                }
+                        },
+                        "direction" : "forward"
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 3,
+                "executionTimeMillis" : 1,
+                "totalKeysExamined" : 0,
+                "totalDocsExamined" : 1105,
+                "executionStages" : {
+                        "stage" : "COLLSCAN",
+                        "filter" : {
+                                "date" : {
+                                        "$eq" : ISODate("2015-12-07T00:00:00Z")
+                                }
+                        },
+                        "nReturned" : 3,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 1107,
+                        "advanced" : 3,
+                        "needTime" : 1103,
+                        "needYield" : 0,
+                        "saveState" : 8,
+                        "restoreState" : 8,
+                        "isEOF" : 1,
+                        "direction" : "forward",
+                        "docsExamined" : 1105
+                }
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+-- CREATE SINGLE INDEX
+
+> db.holidays.createIndex({date:1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.holidays.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "institute.holidays"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "date" : 1
+                },
+                "name" : "date_1",
+                "ns" : "institute.holidays"
+        }
+]
+
+-- EXPLAIN WITH SINGLE INDEX
+
+> db.holidays.find({date :ISODate("2015-12-07T00:00:00Z") }).explain("executionStats")
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "date" : {
+                                "$eq" : ISODate("2015-12-07T00:00:00Z")
+                        }
+                },
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "date" : 1
+                                },
+                                "indexName" : "date_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 3,
+                "executionTimeMillis" : 0,
+                "totalKeysExamined" : 3,
+                "totalDocsExamined" : 3,
+                "executionStages" : {
+                        "stage" : "FETCH",
+                        "nReturned" : 3,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 4,
+                        "advanced" : 3,
+                        "needTime" : 0,
+                        "needYield" : 0,
+                        "saveState" : 0,
+                        "restoreState" : 0,
+                        "isEOF" : 1,
+                        "docsExamined" : 3,
+                        "alreadyHasObj" : 0,
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "nReturned" : 3,
+                                "executionTimeMillisEstimate" : 0,
+                                "works" : 4,
+                                "advanced" : 3,
+                                "needTime" : 0,
+                                "needYield" : 0,
+                                "saveState" : 0,
+                                "restoreState" : 0,
+                                "isEOF" : 1,
+                                "keyPattern" : {
+                                        "date" : 1
+                                },
+                                "indexName" : "date_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ]
+                                },
+                                "keysExamined" : 3,
+                                "seeks" : 1,
+                                "dupsTested" : 0,
+                                "dupsDropped" : 0
+                        }
+                }
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+
+-- EXPLAIN WITHOUT COMPOUND INDEX
+
+> db.holidays.find({date :ISODate("2015-12-07T00:00:00Z"),name:"Pearl Harbor Rememberance Day" }).explain("executionStats")
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "$and" : [
+                                {
+                                        "date" : {
+                                                "$eq" : ISODate("2015-12-07T00:00:00Z")
+                                        }
+                                },
+                                {
+                                        "name" : {
+                                                "$eq" : "Pearl Harbor Rememberance Day"
+                                        }
+                                }
+                        ]
+                },
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "Pearl Harbor Rememberance Day"
+                                }
+                        },
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "date" : 1
+                                },
+                                "indexName" : "date_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [ ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 1,
+                "executionTimeMillis" : 0,
+                "totalKeysExamined" : 3,
+                "totalDocsExamined" : 3,
+                "executionStages" : {
+                        "stage" : "FETCH",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "Pearl Harbor Rememberance Day"
+                                }
+                        },
+                        "nReturned" : 1,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 4,
+                        "advanced" : 1,
+                        "needTime" : 2,
+                        "needYield" : 0,
+                        "saveState" : 0,
+                        "restoreState" : 0,
+                        "isEOF" : 1,
+                        "docsExamined" : 3,
+                        "alreadyHasObj" : 0,
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "nReturned" : 3,
+                                "executionTimeMillisEstimate" : 0,
+                                "works" : 4,
+                                "advanced" : 3,
+                                "needTime" : 0,
+                                "needYield" : 0,
+                                "saveState" : 0,
+                                "restoreState" : 0,
+                                "isEOF" : 1,
+                                "keyPattern" : {
+                                        "date" : 1
+                                },
+                                "indexName" : "date_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ]
+                                },
+                                "keysExamined" : 3,
+                                "seeks" : 1,
+                                "dupsTested" : 0,
+                                "dupsDropped" : 0
+                        }
+                }
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+
+-- CREATE COMPOUND INDEX
+
+> db.holidays.createIndex({date:1,name:1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 2,
+        "numIndexesAfter" : 3,
+        "ok" : 1
+}
+
+-- SHOW EXISTING INDEXES
+
+> db.holidays.getIndexes()
+[
+        {
+                "v" : 2,
+                "key" : {
+                        "_id" : 1
+                },
+                "name" : "_id_",
+                "ns" : "institute.holidays"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "date" : 1
+                },
+                "name" : "date_1",
+                "ns" : "institute.holidays"
+        },
+        {
+                "v" : 2,
+                "key" : {
+                        "date" : 1,
+                        "name" : 1
+                },
+                "name" : "date_1_name_1",
+                "ns" : "institute.holidays"
+        }
+]
+
+
+-- EXPLAIN WITH COMPOUND INDEX
+
+> db.holidays.find({date :ISODate("2015-12-07T00:00:00Z"),name:"Pearl Harbor Rememberance Day" }).explain("executionStats")
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "$and" : [
+                                {
+                                        "date" : {
+                                                "$eq" : ISODate("2015-12-07T00:00:00Z")
+                                        }
+                                },
+                                {
+                                        "name" : {
+                                                "$eq" : "Pearl Harbor Rememberance Day"
+                                        }
+                                }
+                        ]
+                },
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "date" : 1,
+                                        "name" : 1
+                                },
+                                "indexName" : "date_1_name_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ],
+                                        "name" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ],
+                                        "name" : [
+                                                "[\"Pearl Harbor Rememberance Day\", \"Pearl Harbor Rememberance Day\"]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [
+                        {
+                                "stage" : "FETCH",
+                                "filter" : {
+                                        "name" : {
+                                                "$eq" : "Pearl Harbor Rememberance Day"
+                                        }
+                                },
+                                "inputStage" : {
+                                        "stage" : "IXSCAN",
+                                        "keyPattern" : {
+                                                "date" : 1
+                                        },
+                                        "indexName" : "date_1",
+                                        "isMultiKey" : false,
+                                        "multiKeyPaths" : {
+                                                "date" : [ ]
+                                        },
+                                        "isUnique" : false,
+                                        "isSparse" : false,
+                                        "isPartial" : false,
+                                        "indexVersion" : 2,
+                                        "direction" : "forward",
+                                        "indexBounds" : {
+                                                "date" : [
+                                                        "[new Date(1449446400000), new Date(1449446400000)]"
+                                                ]
+                                        }
+                                }
+                        }
+                ]
+        },
+        "executionStats" : {
+                "executionSuccess" : true,
+                "nReturned" : 1,
+                "executionTimeMillis" : 0,
+                "totalKeysExamined" : 1,
+                "totalDocsExamined" : 1,
+                "executionStages" : {
+                        "stage" : "FETCH",
+                        "nReturned" : 1,
+                        "executionTimeMillisEstimate" : 0,
+                        "works" : 3,
+                        "advanced" : 1,
+                        "needTime" : 0,
+                        "needYield" : 0,
+                        "saveState" : 0,
+                        "restoreState" : 0,
+                        "isEOF" : 1,
+                        "docsExamined" : 1,
+                        "alreadyHasObj" : 0,
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "nReturned" : 1,
+                                "executionTimeMillisEstimate" : 0,
+                                "works" : 2,
+                                "advanced" : 1,
+                                "needTime" : 0,
+                                "needYield" : 0,
+                                "saveState" : 0,
+                                "restoreState" : 0,
+                                "isEOF" : 1,
+                                "keyPattern" : {
+                                        "date" : 1,
+                                        "name" : 1
+                                },
+                                "indexName" : "date_1_name_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ],
+                                        "name" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1449446400000), new Date(1449446400000)]"
+                                        ],
+                                        "name" : [
+                                                "[\"Pearl Harbor Rememberance Day\", \"Pearl Harbor Rememberance Day\"]"
+                                        ]
+                                },
+                                "keysExamined" : 1,
+                                "seeks" : 1,
+                                "dupsTested" : 0,
+                                "dupsDropped" : 0
+                        }
+                }
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+-- HINT SINGLE INDEX
+
+> db.holidays.find().hint({date:1})
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b18"), "date_start" : ISODate("2015-12-24T00:00:00Z"), "date_end" : ISODate("2015-12-29T00:00:00Z"), "name" : "6 end-of-year days" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0d"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1b"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "First Foot Day", "url" : "http://www.answers.com/topic/first-foot-day" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b19"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Bloody Mary Day", "url" : "http://www.daysoftheyear.com/days/bloody-mary-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1a"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Commitment Day", "url" : "http://www.daysoftheyear.com/days/commitment-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1c"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Z Day", "url" : "http://www.daysoftheyear.com/days/z-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547f2e"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547f4a"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "flag_day" : 1, "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1d"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Buffet Day", "url" : "http://www.cdkitchen.com/recipes/articles/view/405/1/National-Buffet-Day.html" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1f"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Run it Up the Flagpole and See if Anyone Salutes Day", "url" : "http://holidayinsights.com/other/uptheflagpole.htm" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1e"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Happy Mew Year for Cats Day", "url" : "http://www.daysoftheyear.com/days/happy-mew-year-day-for-cats-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0e"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Day after New Year's Day" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b21"), "date" : ISODate("2015-01-03T00:00:00Z"), "name" : "Festival of Sleep Day", "url" : "http://www.holidayinsights.com/other/festivalofsleep.htm" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b20"), "date" : ISODate("2015-01-03T00:00:00Z"), "name" : "Drinking Straw Day", "url" : "http://www.daysoftheyear.com/days/drinking-straw-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b22"), "date" : ISODate("2015-01-03T00:00:00Z"), "name" : "Humiliation Day", "url" : "http://holidayinsights.com/other/humiliationday.htm" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b24"), "date" : ISODate("2015-01-04T00:00:00Z"), "name" : "Trivia Day", "url" : "http://holidayinsights.com/other/trivia.htm" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b23"), "date" : ISODate("2015-01-04T00:00:00Z"), "name" : "Spaghetti Day", "url" : "http://www.daysoftheyear.com/days/spaghetti-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b25"), "date" : ISODate("2015-01-05T00:00:00Z"), "name" : "Whipped Cream Day", "url" : "http://www.daysoftheyear.com/days/whipped-cream-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b26"), "date" : ISODate("2015-01-06T00:00:00Z"), "name" : "Apple Tree Day", "url" : "http://www.daysoftheyear.com/days/apple-tree-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b27"), "date" : ISODate("2015-01-06T00:00:00Z"), "name" : "Bean Day", "url" : "http://holidayinsights.com/other/beanday.htm" }
+Type "it" for more
+
+-- HINT COMPOUND INDEX
+
+> db.holidays.find().hint({date:1,name:1}).limit(10)
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b18"), "date_start" : ISODate("2015-12-24T00:00:00Z"), "date_end" : ISODate("2015-12-29T00:00:00Z"), "name" : "6 end-of-year days" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b19"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Bloody Mary Day", "url" : "http://www.daysoftheyear.com/days/bloody-mary-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1a"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Commitment Day", "url" : "http://www.daysoftheyear.com/days/commitment-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1b"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "First Foot Day", "url" : "http://www.answers.com/topic/first-foot-day" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0d"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547f2e"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547f4a"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "New Year's Day", "flag_day" : 1, "url" : "https://en.wikipedia.org/wiki/New_Year%27s_Day", "description" : "New Year's Day is observed on January 1, the first day of the year on the modern Gregorian calendar as well as the Julian calendar used in ancient Rome. With most countries using the Gregorian calendar as their main calendar, New Year's Day is the closest thing to being the world's only truly global public holiday, often celebrated with fireworks at the stroke of midnight as the new year starts. January 1 on the Julian calendar currently corresponds to January 14 on the Gregorian calendar, and it is on that date that followers of some of the Eastern Orthodox churches celebrate the New Year." }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1c"), "date" : ISODate("2015-01-01T00:00:00Z"), "name" : "Z Day", "url" : "http://www.daysoftheyear.com/days/z-day/" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b1d"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Buffet Day", "url" : "http://www.cdkitchen.com/recipes/articles/view/405/1/National-Buffet-Day.html" }
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0e"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Day after New Year's Day" }
+
+> db.holidays.find({"date":ISODate("2015-01-02T00:00:00Z"),"name":"Day after New Year's Day"})
+{ "_id" : ObjectId("55a7c4e0d1ba3de47e547b0e"), "date" : ISODate("2015-01-02T00:00:00Z"), "name" : "Day after New Year's Day" }
+
+
+-- EXPLAIN WITH COMPOUND INDEX
+
+> db.holidays.find({"date":ISODate("2015-01-02T00:00:00Z"),"name":"Day after New Year's Day"}).explain()
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "$and" : [
+                                {
+                                        "date" : {
+                                                "$eq" : ISODate("2015-01-02T00:00:00Z")
+                                        }
+                                },
+                                {
+                                        "name" : {
+                                                "$eq" : "Day after New Year's Day"
+                                        }
+                                }
+                        ]
+                },
+                "queryHash" : "F3883FA8",
+                "planCacheKey" : "A021CE86",
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "date" : 1,
+                                        "name" : 1
+                                },
+                                "indexName" : "date_1_name_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ],
+                                        "name" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1420156800000), new Date(1420156800000)]"
+                                        ],
+                                        "name" : [
+                                                "[\"Day after New Year's Day\", \"Day after New Year's Day\"]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [
+                        {
+                                "stage" : "FETCH",
+                                "filter" : {
+                                        "name" : {
+                                                "$eq" : "Day after New Year's Day"
+                                        }
+                                },
+                                "inputStage" : {
+                                        "stage" : "IXSCAN",
+                                        "keyPattern" : {
+                                                "date" : 1
+                                        },
+                                        "indexName" : "date_1",
+                                        "isMultiKey" : false,
+                                        "multiKeyPaths" : {
+                                                "date" : [ ]
+                                        },
+                                        "isUnique" : false,
+                                        "isSparse" : false,
+                                        "isPartial" : false,
+                                        "indexVersion" : 2,
+                                        "direction" : "forward",
+                                        "indexBounds" : {
+                                                "date" : [
+                                                        "[new Date(1420156800000), new Date(1420156800000)]"
+                                                ]
+                                        }
+                                }
+                        }
+                ]
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+-- DROP INDEX
+
+> db.holidays.dropIndex({date:1,name:1})
+{ "nIndexesWas" : 3, "ok" : 1 }
+
+-- EXPLAIN WITHOUT COMPOUND INDEX
+
+> db.holidays.find({"date":ISODate("2015-01-02T00:00:00Z"),"name":"Day after New Year's Day"}).explain()
+{
+        "queryPlanner" : {
+                "plannerVersion" : 1,
+                "namespace" : "institute.holidays",
+                "indexFilterSet" : false,
+                "parsedQuery" : {
+                        "$and" : [
+                                {
+                                        "date" : {
+                                                "$eq" : ISODate("2015-01-02T00:00:00Z")
+                                        }
+                                },
+                                {
+                                        "name" : {
+                                                "$eq" : "Day after New Year's Day"
+                                        }
+                                }
+                        ]
+                },
+                "queryHash" : "F3883FA8",
+                "planCacheKey" : "272A44FC",
+                "winningPlan" : {
+                        "stage" : "FETCH",
+                        "filter" : {
+                                "name" : {
+                                        "$eq" : "Day after New Year's Day"
+                                }
+                        },
+                        "inputStage" : {
+                                "stage" : "IXSCAN",
+                                "keyPattern" : {
+                                        "date" : 1
+                                },
+                                "indexName" : "date_1",
+                                "isMultiKey" : false,
+                                "multiKeyPaths" : {
+                                        "date" : [ ]
+                                },
+                                "isUnique" : false,
+                                "isSparse" : false,
+                                "isPartial" : false,
+                                "indexVersion" : 2,
+                                "direction" : "forward",
+                                "indexBounds" : {
+                                        "date" : [
+                                                "[new Date(1420156800000), new Date(1420156800000)]"
+                                        ]
+                                }
+                        }
+                },
+                "rejectedPlans" : [ ]
+        },
+        "serverInfo" : {
+                "host" : "LAPTOP-CGT0UDGT",
+                "port" : 27017,
+                "version" : "4.2.13",
+                "gitVersion" : "82dd40f60c55dae12426c08fd7150d79a0e28e23"
+        },
+        "ok" : 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
